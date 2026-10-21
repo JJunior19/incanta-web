@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incanta — Política de privacidad</title>
+<meta name="description" content="Política de privacidad de Incanta, app de tiradas y mapa astral.">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #100C1A; color: #F2EAD3; line-height: 1.65; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-family: Palatino, "Iowan Old Style", Georgia, serif; font-size: 2rem; font-weight: 600; letter-spacing: -0.4px; }
+  h2 { font-family: Palatino, "Iowan Old Style", Georgia, serif; font-size: 1.25rem; font-weight: 600; margin: 36px 0 8px; }
+  .accent { color: #C9A227; }
+  a { color: #E3C766; }
+  .wrap { overflow-x: auto; border: 1px solid rgba(201, 162, 39, 0.28); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; background: #171026; font-size: 0.92rem; min-width: 640px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(201, 162, 39, 0.18); vertical-align: top; }
+  th { background: #1A1426; color: #E3C766; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  footer { margin-top: 40px; color: rgba(242, 234, 211, 0.72); font-size: 0.9rem; }
+  .note { background: #171026; border: 1px solid rgba(201, 162, 39, 0.28); border-radius: 12px; padding: 14px 18px; }
+</style>
+</head>
+<body>
+<main>
+  <h1><span class="accent">Incanta</span> — Política de privacidad</h1>
+  <p>Fecha de entrada en vigor: 21 de octubre de 2026. Titular: Jorge Jr. Ccarhuas Aroni. Contacto: <a href="mailto:hola@atendora.app">hola@atendora.app</a>.</p>
+  <p>Esta política está en español y, más abajo, en inglés. Las dos versiones dicen lo mismo. Si una app de tienda te pide una URL de privacidad, esta página es esa URL.</p>
+
+  <h2>Qué es Incanta</h2>
+  <p>Incanta ofrece tiradas de cartas y un mapa astral para reflexión personal. No es consejo profesional, médico, legal ni financiero, y no predice el futuro.</p>
+
+  <h2>Qué datos tratamos y por qué</h2>
+  <div class="wrap">
+  <table>
+    <tr><th>Categoría</th><th>Datos</th><th>Finalidad</th><th>Dónde</th></tr>
+    <tr>
+      <td>Cuenta</td>
+      <td>Si entras como invitado, un identificador anónimo. Si vinculas Apple o Google, el identificador de esa cuenta y, solo si el proveedor lo comparte, el nombre o el email.</td>
+      <td>Guardar tu perfil. Vincular Apple o Google es opcional.</td>
+      <td>Firebase Authentication (Google)</td>
+    </tr>
+    <tr>
+      <td>Perfil</td>
+      <td>Alias, género, fecha de nacimiento, lugar (ciudad, país, coordenadas y zona horaria), hora de nacimiento y si es exacta, aproximada o desconocida, temas que te importan e idioma.</td>
+      <td>Personalizar la app y calcular el mapa astral.</td>
+      <td>Cloud Firestore (Google) y una copia en el dispositivo</td>
+    </tr>
+    <tr>
+      <td>En el dispositivo</td>
+      <td>Lecturas, racha, archivo, la interpretación del mapa ya generada, ajustes y el recordatorio diario.</td>
+      <td>Tu diario de tiradas, sin subirlo a una cuenta.</td>
+      <td>Solo este dispositivo</td>
+    </tr>
+    <tr>
+      <td>Lectura</td>
+      <td>Las cartas de la tirada, el texto de tu pregunta si la escribes, el idioma y un identificador local del dispositivo.</td>
+      <td>Redactar la lectura. El texto de la pregunta no se guarda en una base de datos. Los registros técnicos anotan que hubo una lectura y cuántos caracteres tenía la pregunta, no el texto.</td>
+      <td>Nuestro servidor en Google Cloud (región europe-southwest1, España) y el modelo Gemini (Google)</td>
+    </tr>
+    <tr>
+      <td>Voz</td>
+      <td>El texto de la lectura, para convertirla en audio. El archivo se guarda con el identificador local, sin tu nombre.</td>
+      <td>Reproducir la lectura en voz alta. Es una función de Premium.</td>
+      <td>Fish Audio (síntesis) y Google Cloud Storage (el archivo)</td>
+    </tr>
+    <tr>
+      <td>Mapa astral</td>
+      <td>Fecha, hora y lugar de nacimiento.</td>
+      <td>Escribir la interpretación. El resultado se guarda en el dispositivo.</td>
+      <td>El mismo servidor y Gemini. El lugar y la hora también forman parte del perfil.</td>
+    </tr>
+    <tr>
+      <td>Búsqueda de ciudad</td>
+      <td>El nombre de ciudad que escribes, una sola vez, para obtener coordenadas.</td>
+      <td>Resolver el lugar de nacimiento. Después no se vuelve a consultar.</td>
+      <td>Open-Meteo</td>
+    </tr>
+    <tr>
+      <td>Uso de la app</td>
+      <td>Nombre del evento (por ejemplo, tirada completada o pantalla de Premium vista), identificador local y hora. Sin el texto de tus preguntas y sin tu nombre.</td>
+      <td>Saber si la app se usa. No se asocia a tu cuenta de Apple o Google.</td>
+      <td>Nuestro servidor. Queda en registros técnicos, no en una base de analítica de terceros.</td>
+    </tr>
+    <tr>
+      <td>Anuncios</td>
+      <td>En la versión gratuita, los datos que Google necesita para mostrar un anuncio no personalizado. En el iPhone no pedimos permiso de seguimiento ni el identificador de publicidad (IDFA).</td>
+      <td>Mostrar un anuncio al generar una lectura si no tienes Premium.</td>
+      <td>Google AdMob</td>
+    </tr>
+    <tr>
+      <td>Suscripción</td>
+      <td>Si Premium está activo y qué plan es (mensual o anual). No vemos el número de tu tarjeta.</td>
+      <td>Desbloquear Premium y la prueba del plan anual, si la empiezas.</td>
+      <td>Apple cobra el pago. RevenueCat nos dice si la suscripción está activa.</td>
+    </tr>
+  </table>
+  </div>
+
+  <h2>Recordatorio diario</h2>
+  <p>Si lo activas, el aviso de la mañana (07:00, hora de Madrid) se programa en el dispositivo. No lo enviamos desde un servidor y no guardamos un token de notificaciones.</p>
+
+  <h2>Con quién se comparten los datos</h2>
+  <p>No vendemos tus datos. Los proveedores de la tabla tratan datos para prestarte el servicio: Google (Firebase, Gemini, Cloud Storage y AdMob), Fish Audio, RevenueCat, Apple y Open-Meteo. Algunos pueden tratar datos fuera del Espacio Económico Europeo, con las garantías que ofrece cada proveedor.</p>
+
+  <h2>Cuánto tiempo los conservamos</h2>
+  <ul>
+    <li>El perfil y la cuenta, hasta que los borras.</li>
+    <li>Las lecturas y el resto de datos del dispositivo, hasta que borras la app o usas «Borrar mi cuenta y datos».</li>
+    <li>El audio de la voz, mientras haga falta para reproducirlo. No se borra solo al borrar la cuenta: hay que pedirlo por email.</li>
+    <li>Los registros técnicos del servidor, el tiempo que Google Cloud conserva los logs de la función.</li>
+  </ul>
+
+  <h2>Cómo borrar tus datos y otros derechos</h2>
+  <div class="note">
+    <p>En la app: <b>Ajustes › Borrar mi cuenta y datos</b>. Eso elimina el perfil en Firestore, el usuario de Firebase y los datos de ese dispositivo (lecturas, racha, archivo y ajustes).</p>
+    <p>Para el audio de la voz, o para pedir acceso, corrección o una copia, escribe a <a href="mailto:hola@atendora.app">hola@atendora.app</a>. Respondemos en un plazo máximo de 30 días.</p>
+    <p style="margin:0">También puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">aepd.es</a>).</p>
+  </div>
+
+  <h2>Suscripciones</h2>
+  <p>El pago lo procesa Apple. Para cancelar: <b>Ajustes › tu nombre › Suscripciones</b>. Cancelar evita el siguiente cobro y mantienes Premium hasta el fin del periodo ya pagado. El plan anual puede incluir 3 días de prueba. El mensual no.</p>
+
+  <h2>Menores</h2>
+  <p>Incanta no está dirigida a menores de 14 años. Si crees que un menor nos ha facilitado datos, escríbenos y los borraremos.</p>
+
+  <h2>Cambios</h2>
+  <p>Si cambia esta política, actualizaremos la fecha de esta página.</p>
+
+  <h2 id="en">Privacy policy (English)</h2>
+  <p>Effective date: 21 October 2026. Controller: Jorge Jr. Ccarhuas Aroni. Contact: <a href="mailto:hola@atendora.app">hola@atendora.app</a>. This English text is the same policy as the Spanish text above.</p>
+  <p>Incanta offers card readings and a birth chart for personal reflection. It is not professional, medical, legal, or financial advice, and it does not predict the future.</p>
+  <p><b>Account.</b> Guest use creates an anonymous Firebase identifier. Linking Sign in with Apple or Google is optional. If you link, we receive that account’s identifier and, only when the provider shares them, a name or email. Purpose: keep your profile. Provider: Firebase Authentication (Google).</p>
+  <p><b>Profile.</b> Alias, gender, birth date, birth place (city, country, coordinates, time zone), birth time and whether it is exact, approximate, or unknown, topics you care about, and language. Stored in Cloud Firestore and copied on the device. Used to personalize the app and calculate the birth chart.</p>
+  <p><b>On the device only.</b> Readings, streak, archive, a generated chart interpretation, settings, and the optional daily reminder. They are not uploaded as your journal. The morning reminder (07:00, Madrid time) is scheduled on the device. We do not store a push token.</p>
+  <p><b>Generating a reading.</b> The app sends the drawn cards, your question text if you write one, the language, and a device-local identifier to our server in Google Cloud (europe-southwest1, Spain) and then to Google’s Gemini model. The question text is not stored in a database. Technical logs record that a reading happened and how long the question was, not the text.</p>
+  <p><b>Voice.</b> Premium only. The reading text is sent to Fish Audio to synthesize speech. The audio file is stored in Google Cloud Storage under the local identifier, without your name, so the app can play it.</p>
+  <p><b>Birth chart.</b> Birth date, time, and place are sent to the same server and to Gemini to write the interpretation. The result is cached on the device. Place and time also stay in your profile.</p>
+  <p><b>City search.</b> The city name you type is sent once to Open-Meteo to resolve coordinates. We store the resolved place and do not query again.</p>
+  <p><b>Usage.</b> We send an event name (for example, reading completed or paywall viewed), a local identifier, and a timestamp. No question text and no name. It is not linked to your Apple or Google account. It stays in our server logs, not in a third-party analytics product.</p>
+  <p><b>Ads.</b> The free tier may show a non-personalized ad through Google AdMob when a reading is generated. On iPhone we do not ask for tracking permission and we do not use the advertising identifier (IDFA). Premium does not see ads.</p>
+  <p><b>Subscriptions.</b> Apple processes payment. We do not see your card number. RevenueCat tells us whether Premium is active and which plan it is (monthly or yearly). The yearly plan may include a 3-day trial. The monthly plan does not. Cancel in <b>Settings › your name › Subscriptions</b>. You keep Premium until the end of the period already paid.</p>
+  <p><b>Sharing.</b> We do not sell your data. The providers named above process data to run the service. Some of them may process data outside the European Economic Area under their own safeguards.</p>
+  <p><b>Retention.</b> Profile and account until you delete them. On-device data until you delete the app or use Delete my account and data. Voice audio until you email us to remove it: the in-app delete button does not remove those files. Server logs follow Google Cloud’s log retention.</p>
+  <p><b>Your rights.</b> In the app, <b>Settings › Delete my account and data</b> removes the Firestore profile, the Firebase user, and the data on that device. Email <a href="mailto:hola@atendora.app">hola@atendora.app</a> to delete voice audio or to ask for access, correction, or a copy. We reply within 30 days. You may also lodge a complaint with the Spanish Data Protection Agency (<a href="https://www.aepd.es">aepd.es</a>).</p>
+  <p><b>Children.</b> Incanta is not directed at anyone under 14. If you believe a child has given us data, email us and we will delete it.</p>
+  <p><b>Changes.</b> If this policy changes, we will update the date on this page.</p>
+
+  <footer>
+    <a href="index.html">Soporte</a> · Titular: Jorge Jr. Ccarhuas Aroni · 21 de octubre de 2026
+  </footer>
+</main>
+</body>
+</html>
